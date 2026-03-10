@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>손실 없는 투자 원칙 VIP (포커스)</title>
+    <style>
+        /* [폰트 설정] */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Montserrat:wght@800&display=swap');
+        
+        /* [전체 배경] 움직이는 하이테크 데이터 그리드 */
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #020617; color: #f8fafc; overflow-x: hidden;
+            background-image: linear-gradient(rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.95)),
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(251, 191, 36, 0.03) 1px, rgba(251, 191, 36, 0.03) 2px),
+                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(251, 191, 36, 0.03) 1px, rgba(251, 191, 36, 0.03) 2px);
+            background-size: cover, 100% 4px, 4px 100%; animation: data-stream 30s linear infinite; word-break: keep-all; 
+        }
+
+        @keyframes data-stream { from { background-position: 0 0, 0 0, 0 0; } to { background-position: 0 0, 0 100px, 100px 0; } }
+
+        /* [중앙 골드 아우라] */
+        .glow-aura {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100vw; height: 100vw;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, rgba(0,0,0,0) 75%); z-index: -1; pointer-events: none;
+            animation: aura-pulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes aura-pulse { from { transform: translate(-50%, -50%) scale(1); opacity: 0.6; } to { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; } }
+
+        /* [FOCUS 전용 로고] */
+        .logo-wrapper { padding: 50px 0 15px; text-align: center; }
+        .main-logo { 
+            font-family: 'Montserrat', sans-serif; font-size: 46px; font-weight: 800; 
+            letter-spacing: 8px; color: #fbbf24; text-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
+            display: inline-block; position: relative;
+        }
+        .main-logo::after {
+            content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+            width: 50px; height: 4px; background: #fbbf24; border-radius: 2px;
+        }
+
+        header { background: transparent; text-align: center; padding: 40px 20px 100px; }
+        .tagline { color: #fbbf24; font-weight: 700; font-size: 15px; letter-spacing: 3px; margin-bottom: 20px; display: block; }
+        h1 { font-size: 34px; font-weight: 900; line-height: 1.4; margin: 0; letter-spacing: -1.5px; text-shadow: 0 2px 15px rgba(0,0,0,0.5); }
+        .gold { color: #fbbf24; }
+        
+        .container { max-width: 500px; margin: -70px auto 60px; position: relative; z-index: 10; padding: 0 20px; }
+        
+        /* [하이라이트 박스] */
+        .benefit-box { 
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); 
+            color: #0f172a; padding: 30px 15px; border-radius: 24px; text-align: center; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4); margin-bottom: 30px;
+        }
+        .benefit-row { display: flex; justify-content: space-around; align-items: center; }
+        .benefit-val { font-size: 28px; font-weight: 900; display: block; color: #b21f1f; }
+        .benefit-txt { font-size: 14px; font-weight: 800; display: block; }
+
+        /* [홍보 문구] */
+        .promo-box { 
+            background: rgba(15, 23, 42, 0.92); padding: 30px 25px; border-radius: 24px; text-align: center; 
+            border: 1px solid rgba(251, 191, 36, 0.3); margin-bottom: 30px; backdrop-filter: blur(15px);
+        }
+        .promo-main { font-size: 20px; font-weight: 900; color: #fbbf24; display: block; margin-bottom: 12px; }
+        .promo-sub { font-size: 17px; color: #fff; font-weight: 700; line-height: 1.6; }
+
+        /* [체크리스트] */
+        .content-section { 
+            background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 24px; 
+            margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.06); 
+        }
+        .point-item { display: flex; align-items: flex-start; margin-bottom: 20px; font-size: 17px; font-weight: 500; }
+        .point-item span { color: #fbbf24; margin-right: 15px; font-size: 20px; }
+
+        /* [신청 버튼] */
+        .btn-submit { 
+            display: block; width: 100%; background: #fbbf24; color: #000; border: none;
+            padding: 26px; border-radius: 18px; font-size: 26px; font-weight: 900; 
+            text-decoration: none; text-align: center; cursor: pointer;
+            box-shadow: 0 15px 45px rgba(251, 191, 36, 0.5);
+        }
+        .btn-submit:active { transform: scale(0.95); }
+        
+        .footer { text-align: center; font-size: 12px; color: #475569; margin-top: 60px; padding-bottom: 50px; }
+    </style>
+</head>
+<body>
+
+<div class="glow-aura"></div>
+
+<header>
+    <div class="logo-wrapper">
+        <div class="main-logo">FOCUS</div>
+    </div>
+    <span class="tagline">PREMIUM INVESTMENT PRINCIPLE</span>
+    <h1>손실 없는 투자 원칙<br><span class="gold">VIP (포커스)</span></h1>
+</header>
+
+<div class="container">
+    <div class="benefit-box">
+        <div class="benefit-row">
+            <div class="benefit-item"><span class="benefit-txt">초기 매입금 지원</span><span class="benefit-val">20% 즉시지급</span></div>
+            <div style="width: 2px; height: 45px; background: rgba(0,0,0,0.15);"></div>
+            <div class="benefit-item"><span class="benefit-txt">해외선물 수수료</span><span class="benefit-val">$2.0 최저가</span></div>
+        </div>
+    </div>
+
+    <div class="promo-box">
+        <span class="promo-main">[변동성 시장의 해답, 해외 선물]</span>
+        <span class="promo-sub">복잡한 시장 분석은 전문가에게 맡기시고,<br>당신은 수익에 집중하세요!</span>
+    </div>
+
+    <div class="content-section">
+        <div class="point-item"><span>★</span> 상방/하방 구애받지 않는 '양방향' 타점 실시간 공유</div>
+        <div class="point-item"><span>★</span> 해외선물 수익 극대화를 위한 체계적 리스크 헷지</div>
+        <div class="point-item"><span>★</span> 수년간 검증된 포커스만의 독보적인 시장 분석 노하우</div>
+        <div class="point-item"><span>★</span> 실시간 시장 이슈 브리핑 및 대응 전략 제시</div>
+        <div class="point-item"><span>★</span> 초보자도 수익 낼 수 있는 1:1 맞춤형 무료 교육 서비스</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://naver.me/50BAV2eP" class="btn-submit">무료 체험 신청하기</a>
+        <p style="color: #64748b; margin-top: 22px; font-size: 15px;">성공 투자의 파트너, 포커스와 함께하세요.</p>
+    </div>
+
+    <div class="footer">ⓒ VIP FOCUS PRINCIPLE. All Rights Reserved.</div>
+</div>
+
+</body>
+</html>
